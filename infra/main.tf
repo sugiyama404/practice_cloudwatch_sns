@@ -20,9 +20,9 @@ module "iam" {
 module "lambda" {
   source               = "./modules/lambda"
   app_name             = var.app_name
-  lambda_iam_role      = module.iam.iam_for_lambda_arn
+  lambda_iam_role      = module.iam.lambda_iam_role
   lambda_function_name = var.lambda_function_name
-  sns_topic_arn        = module.sns.sns_arn
+  sns_topic_arn        = module.sns.sns_topic_arn
 }
 
 module "sns" {
