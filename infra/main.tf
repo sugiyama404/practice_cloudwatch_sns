@@ -65,6 +65,8 @@ module "lambda" {
   lambda_function_name          = var.lambda_function_name
   sns_topic_arn                 = module.sns.sns_topic_arn
   cloudwatch_lambda_trigger_arn = module.cloudwatch.cloudwatch_lambda_trigger_arn
+  region                        = var.region
+  webserver_log_group_name      = var.webserver_log_group_name
 }
 
 module "sns" {

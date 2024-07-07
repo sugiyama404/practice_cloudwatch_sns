@@ -16,6 +16,7 @@ routes.forEach(route => {
             if (route.action === 'error') {
                 throw new Error('An error page was accessed.');
             } else {
+                console.log(route.action);
                 res.send(route.message);
             }
         } catch (err) {
