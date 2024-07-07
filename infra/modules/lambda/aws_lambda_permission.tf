@@ -11,6 +11,5 @@ resource "aws_lambda_permission" "allow_cloudwatch" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.main.function_name
   principal     = "logs.${var.region}.amazonaws.com"
-  # source_arn    = var.cloudwatch_lambda_trigger_arn
-  source_arn = "arn:aws:logs:${var.region}:${local.account_id}:log-group:${var.webserver_log_group_name}:*"
+  source_arn    = "arn:aws:logs:${var.region}:${local.account_id}:log-group:${var.webserver_log_group_name}:*"
 }

@@ -15,3 +15,9 @@ resource "aws_iam_policy_attachment" "lambda_role_attachment" {
   roles      = ["${aws_iam_role.lambda_role.name}"]
   policy_arn = aws_iam_policy.lambda_policy.arn
 }
+
+resource "aws_iam_policy_attachment" "lambda_exec_policy_attach" {
+  name       = "${var.app_name}-lambda-execute-attach"
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  roles      = ["${aws_iam_role.lambda_role.name}"]
+}

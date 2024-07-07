@@ -13,17 +13,16 @@ const routes = [
 routes.forEach(route => {
     app.get(route.path, (req, res) => {
         try {
+            console.log(route.action);
             if (route.action === 'error') {
                 throw new Error('An error page was accessed.');
             } else {
-                console.log(route.action);
                 res.send(route.message);
             }
         } catch (err) {
             console.error('Fatal error:', err.message);
             res.status(500).send('致命的なエラーが発生しました\n');
         }
-        res.send(route.message);
     });
 });
 
