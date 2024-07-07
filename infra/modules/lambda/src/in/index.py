@@ -8,17 +8,22 @@ sns_topic_arn = os.environ['SNS_TOPIC_ARN']
 
 
 def lambda_handler(event, context):
-    # メールの内容を作成します
-    message = "This is a test message from SNS triggered Lambda function."
-    subject = "Test Email"
+    # CloudWatch Logsのイベントからメッセージを抽出します
+    for record in event['Records']:
+        # CloudWatch LogsのデータはBase64でエンコードされています
+        log_data = json.loads(record['body'])
+        log_message = log_data['message']
 
-    # SNSトピックにメッセージをパブリッシュします
-    sns_client.publish(
-        TopicArn=sns_topic_arn,
-        Message=message,
-        Subject=subject
-    )
+        # メールの内容を作成します
+        message = f"Error log detected:\n{log_message}"
+        subject = "CloudWatch Error Log Alert"
 
+        # SNSトピックにメッセージをパブリッシュします
+        sns_client.publish(
+            TopicArn=sns_topic_arn,
+            Message=message,
+            Subject=subject
+        )
     return {
         'statusCode': 200,
         'body': json.dumps('Email sent successfully!')
