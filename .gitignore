@@ -106,6 +106,7 @@ terraform.rc
 
 memo.txt
 .env
+email.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,terraform,nextjs
 
