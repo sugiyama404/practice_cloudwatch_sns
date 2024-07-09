@@ -32,7 +32,6 @@ resource "aws_iam_policy" "cloudwatch_policy" {
   })
 }
 
-
 resource "aws_iam_policy" "lambda_policy" {
   name = "lambda_policy"
 

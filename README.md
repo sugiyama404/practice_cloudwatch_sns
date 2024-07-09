@@ -65,8 +65,11 @@ bin/terraform_destroy
   <img src="sources/email.png" alt="animated" width="400">
 </p>
 
+# Qiita記事
 
+技術詳細はQiitaに記載しています。
 
+[エラーログ監視アラート: AWS Fargate + CloudWatch + Lambda + SNS](https://qiita.com/sugiyama404/items/77656bed943b529a2c0e)
 
 
 
