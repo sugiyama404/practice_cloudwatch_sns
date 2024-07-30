@@ -8,6 +8,9 @@
 ![gitignore](https://img.shields.io/badge/gitignore%20io-204ECF?logo=gitignoredotio&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?logo=amazon-aws&logoColor=white)
 ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?logo=terraform&logoColor=white)
+[![Docker](https://img.shields.io/badge/Docker-2CA5E0?logo=docker&logoColor=white)](https://www.docker.com/)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?logo=javascript&logoColor=F7DF1E)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB)
 
 # 概要
 このプロジェクトは、AWSのFargate上で動作するアプリケーションのエラーログをリアルタイムで監視し、問題が発生した際にメールで通知するシステムです。CloudWatchを使用してエラーログを収集・分析し、Lambda関数をトリガーとしてSNSを通じてアラートを送信します。
